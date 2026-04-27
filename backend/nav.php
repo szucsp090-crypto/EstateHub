@@ -83,6 +83,26 @@
     </div>
     </div>
 </div>
+
+<!-- Footer -->
+
+<footer>
+  <div class="footer-content">
+    <h3>EstateHub</h3>
+    <p>Your trusted partner in real estate. We connect buyers, sellers, and renters with the best properties and services. Whether you're looking to buy, sell, rent, or invest, EstateHub is here to help you every step of the way.</p>
+    <ul class="socials">
+      <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2026 EstateHub. All rights reserved. Designed by <span>SzP & TFF CO.</span></p>
+  </div>
+</footer>
+
+
 <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
