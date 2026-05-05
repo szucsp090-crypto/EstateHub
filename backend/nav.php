@@ -1,6 +1,7 @@
 <script src="https://kit.fontawesome.com/782e557ec2.js" crossorigin="anonymous"></script>
 
 <a class="menu-center" href="index.php">EstateHub</a>
+<!-- <img class ="menu-center" style='max-width: 150px;' src='estatelogo.png' alt="EstateHub"> -->
 
 <nav>
     <ul>
@@ -155,6 +156,7 @@
 <footer>
   <div class="footer-content">
     <h3>EstateHub</h3>
+    <img style='max-width: 200px;' src='img/estatehublogoblack.png' alt="EstateHub">
     <p>Your trusted partner in real estate. We connect buyers, sellers, and renters to the right properties — and the right access. Whether you're buying, selling, renting, or investing, EstateHub is here to open every door that matters.</p>
     <ul class="socials">
       <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
