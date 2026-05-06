@@ -58,18 +58,6 @@
 
     }
 
-    if(isset($_POST['reg-btn'])){
-
-       if(empty($_POST['email']) || empty($_POST['username']) || empty($_POST['pass1']) || empty($_POST['pass2'])){
-        Message("Minden mező kitöltése kötelező!");
-    }
-
-       if(!isset($_POST['terms'])){
-        Message("Fogadd el a feltételeket!");
-    }
-
-   }
-
   function Message($text){
     echo "<script>alert('$text')</script>";
 }
