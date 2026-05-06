@@ -67,7 +67,7 @@
 
         <div class="sn-reference">
             <input type="text" name="reference" placeholder="Define your needs…">
-            <button type="button" onclick="searchByRef()">
+            <button type="button">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </div>
@@ -150,26 +150,6 @@
     </div>
     </div>
 </div>
-
-<!-- Footer -->
-
-<footer>
-  <div class="footer-content">
-    <h3>EstateHub</h3>
-    <img style='max-width: 200px;' src='img/estatehublogoblack.png' alt="EstateHub">
-    <p>Your trusted partner in real estate. We connect buyers, sellers, and renters to the right properties — and the right access. Whether you're buying, selling, renting, or investing, EstateHub is here to open every door that matters.</p>
-    <ul class="socials">
-      <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
-    <p>Copyright &copy; 2026 EstateHub. All rights reserved. Designed by <span>SzP & TFF CO.</span></p>
-  </div>
-</footer>
-
 
 
 <script>
