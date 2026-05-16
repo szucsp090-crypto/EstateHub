@@ -12,10 +12,12 @@
         <?php if(isset($_COOKIE['id'])){ ?>
           <li><a class="menu-right" href="logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
         <?php } ?>
-        <li><a class="menu-right" href="profile.php"><i class="fa-regular fa-heart"></i></a></li>
+        <li><a class="menu-right" href="profile.php"><i class="fa-regular fa-heart"><span id="favnum"></span></i></a></li>
         <li><a class="menu-right" href="profile.php"><i class="fa-solid fa-user-tie"></i></a></li>
     </ul>
 </nav>
+
+
 
 <!-- SIDENAV -->
 
@@ -31,11 +33,11 @@
     <!-- Porperties tab -->
     <div id="tab-props" class="sn-tab-content">
         <div class="sn-radio-group">
-            <label class="sn-radio"><input type="radio" name="category" value="buy"> <span>Buy</span></label>
+            <label class="sn-radio"><input type="radio" name="category" value="buy" checked> <span>Buy</span></label>
             <label class="sn-radio"><input type="radio" name="category" value="rent"> <span>Rent</span></label>
             <label class="sn-radio"><input type="radio" name="category" value="seasonal"> <span>Seasonal Rental, holidays</span></label>
             <label class="sn-radio"><input type="radio" name="category" value="new"> <span>New developments</span></label>
-            <label class="sn-radio"><input type="radio" name="category" value="life" checked> <span>Life annuities</span></label>
+            <label class="sn-radio"><input type="radio" name="category" value="life"> <span>Life annuities</span></label>
         </div>
 
         <!-- more szűrő -->
@@ -50,20 +52,64 @@
             <option value="pt">Portugal</option>
         </select>
 
-        <div class="sn-filter-list">
-            <div class="sn-filter-item accent" onclick="openSubFilter('property-type')">
+        <div class="sn-filter-list"></div>
+          <div class="sn-filter-wrapper">
+            <div class="sn-filter-item" onclick="openSubFilter(this)">
                 <span>Property type</span><span class="sn-arrow">&#8250;</span>
             </div>
-            <div class="sn-filter-item" onclick="openSubFilter('bedrooms')">
+            <div class="sn-sub-filter">
+                <label><input type="checkbox">Apartment</label>
+                <label><input type="checkbox">House</label>
+                <label><input type="checkbox">Land</label>
+            </div>
+          </div>
+
+          <div class="sn-filter-wrapper">
+            <div class="sn-filter-item" onclick="openSubFilter(this)">
                 <span>Room Preferences</span><span class="sn-arrow">&#8250;</span>
             </div>
-            <div class="sn-filter-item" onclick="openSubFilter('surface')">
+            <div class="sn-sub-filter">
+                <label><input type="checkbox">+1</label>
+                <label><input type="checkbox">+2</label>
+                <label><input type="checkbox">+3</label>
+                <label><input type="checkbox">+4</label>
+            </div>
+          </div>
+
+          <div class="sn-filter-wrapper">
+            <div class="sn-filter-item" onclick="openSubFilter(this)">
                 <span>Surface</span><span class="sn-arrow">&#8250;</span>
             </div>
-            <div class="sn-filter-item" onclick="openSubFilter('criteria')">
+            <div class="sn-sub-filter">
+            <div class="sn-surface-inputs">
+              <input type="number" placeholder="Min m²">
+              <input type="number" placeholder="Max m²">
+            </div>
+            <input type="range" min="0" max="500">
+            <div class="sn-surface-tags">
+                <button>50+</button>
+                <button>100+</button>
+                <button>150+</button>
+                <button>200+</button>
+            </div>
+          </div>
+          </div>
+          <div class="sn-filter-wrapper">
+            <div class="sn-filter-item" onclick="openSubFilter(this)">
                 <span>+ Criteria</span><span class="sn-arrow">&#8250;</span>
             </div>
-        </div>
+            <div class="sn-sub-filter">
+
+              <label><input type="checkbox"> Furnished</label>
+              <label><input type="checkbox"> Balcony</label>
+              <label><input type="checkbox"> Parking</label>
+              <label><input type="checkbox"> Elevator</label>
+              <label><input type="checkbox"> Garden</label>
+              <label><input type="checkbox"> Pet friendly</label>
+              <label><input type="checkbox"> Air conditioning</label>
+
+          </div>
+        </div>  
 
         <div class="sn-reference">
             <input type="text" name="reference" placeholder="Define your needs…">
@@ -71,7 +117,8 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </div>
-</div>
+            <button class="sn-search-btn" type="button">Search</button>
+ </div>
 
     <!-- Passions tab -->
     <div id="tab-pass" class="sn-tab-content" style="display:none;">
@@ -153,6 +200,20 @@
 
 
 <script>
+  
+// Favorite count
+
+$("#favnum").load("loadfav.php");
+
+	setInterval(
+		function(){
+		
+			$("#favnum").load("loadfav.php");
+		
+	}, 1000);
+
+
+  // Sidenav functions
 function openNav() {
     document.getElementById("mySidenav").style.width = "320px";
     document.getElementById("sn-overlay").style.display = "block";
@@ -163,6 +224,7 @@ function closeNav() {
     document.getElementById("sn-overlay").style.display = "none";
 }
 
+// Tab switching
 function switchTab(el, tab) {
     document.querySelectorAll('.sn-tab').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
@@ -170,8 +232,12 @@ function switchTab(el, tab) {
     document.getElementById('tab-pass').style.display = tab === 'pass' ? '' : 'none';
 }
 
-function openSubFilter(type) {
-    console.log('Open sub-filter:', type);
+function openSubFilter(element) {
+
+    const wrapper = element.parentElement;
+
+    wrapper.classList.toggle('active');
+
 }
 
 </script>
